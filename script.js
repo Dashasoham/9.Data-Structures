@@ -246,28 +246,31 @@ const guestsCorrect = restaurant.numGuests ?? 10;
 console.log(guestsCorrect);
 
 */
-
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  order: function (starterIndex, mainIndex) {
+
+  //ES6 ENHANCED OBJECT LITERALS
+  openingHours,
+  //NO NEED TO MENTION FUNCTION
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -289,6 +292,7 @@ const restaurant = {
     console.log(mainIngredient, otherIngredients);
   },
 };
+console.log(restaurant);
 
 const rest1 = {
   name: 'Capri',
@@ -319,3 +323,20 @@ rest1.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+for (let rep = 1; rep < 1; rep++) {
+  console.log([...menu]);
+}
+
+console.log('-----The FOR-OF Loop-----');
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) console.log(`${i + 1}:${el}`);
+
+console.log('------');
+// for (const item of restaurant.categories) console.log(item);
+
+// console.log(...menu.entries());
