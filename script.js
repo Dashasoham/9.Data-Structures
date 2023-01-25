@@ -340,3 +340,54 @@ console.log('------');
 // for (const item of restaurant.categories) console.log(item);
 
 // console.log(...menu.entries());
+
+console.log('----OPTIONAL CHAINING-----');
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? `closed`;
+  console.log(`On  ${day}, we open at ${open}`);
+}
+
+console.log('----METHODS------');
+
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+console.log('----ARRAY-----');
+
+const users = [
+  {
+    name: 'Jonas',
+    email: 'test@test.io',
+  },
+];
+
+console.log(users[0]?.name ?? 'User array is empty');
+
+console.log('----LOOPING OBJECTS-----');
+//PROPERTY NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days:`;
+for (const day of properties) {
+  openStr = openStr + `${day},`;
+}
+
+console.log(openStr);
+
+//PrOPERTyxs VALUES
+
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  // console.log(x);
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
