@@ -245,7 +245,7 @@ console.log(guests3);
 const guestsCorrect = restaurant.numGuests ?? 10;
 console.log(guestsCorrect);
 
-*/
+
 const openingHours = {
   thu: {
     open: 12,
@@ -502,3 +502,4 @@ answer === question.get('correct')
 //COnvert map to array
 
 console.log([...question]);
+*/
