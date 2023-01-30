@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -131,3 +131,29 @@ const capitalizeName = function (name) {
 
 capitalizeName('jessica ann smith davis');
 capitalizeName('jonas test');
+
+//Padding
+
+const message = 'Go to gate 23';
+
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(25, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(4729303839230));
+console.log(maskCreditCard('74894204293274'));
+
+//Repeat
+const message2 = 'Bad weather...All depatures delayed';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩'.repeat(n)}`);
+};
+planesInLine(5);
+
+*/
