@@ -62,7 +62,7 @@ let originalArray = [3, 5, 7, 9];
 console.log(originalArray);
 // let clonedArray = [1, ...originalArray];
 let [...clonedArray] = originalArray;
-*/
+
 
 // underscoreCase ✅
 // firstName ✅
@@ -89,3 +89,43 @@ document.querySelector('button').addEventListener('click', function () {
     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
 });
+*/
+
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+console.log(sentence.length);
+
+const averageLength = function (sentence) {
+  const words = sentence.split(' ');
+  console.log(words.length);
+  let totalLength = 0;
+
+  for (i = 0; i < words.length; i++) {
+    totalLength += words[i].length;
+  }
+  return totalLength / words.length;
+};
+console.log(averageLength(sentence));
+
+const words = sentence.toLowerCase().split(' ');
+console.log(words);
+
+const namesUpper = [];
+
+for (const word of words) {
+  namesUpper.push(word[0].toUpperCase() + word.slice(1));
+}
+
+console.log(namesUpper.join(' '));
+// const words = sentence.toLowerCase().split(' ');
+// console.log(words);
+// for (const word of words) {
+//   const finalSentence = `${word.replace(word[0], word[0].toUpperCase())}`;
+//   console.log(finalSentence);
+// }
+
+// for (const [i, row] of rows.entries()) {
+//   const [first, second] = row.toLowerCase().trim().split('_');
+//   const output = `${first}${second.replace(
+//     second[0],
+//     second[0].toUpperCase()
+//   )}`
