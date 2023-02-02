@@ -157,3 +157,90 @@ const planesInLine = function (n) {
 planesInLine(5);
 
 */
+// Palindrome checker: Write a function that takes in a string and returns a boolean indicating whether the string is a palindrome or not. A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward.
+
+console.log('----PALINDROME CHECKER----');
+
+const palindromeChecker = function (str) {
+  let newStr = str
+    .replaceAll(',', '')
+    .replaceAll('?', '')
+    .replaceAll('.', '')
+    .replaceAll(' ', '')
+    .toLowerCase()
+    .split('')
+    .join('');
+
+  const palindrome = newStr
+    .replaceAll(',', '')
+    .replaceAll('?', '')
+    .replaceAll('.', '')
+    .replaceAll(' ', '')
+    .toLowerCase()
+    .split('')
+    .reverse()
+    .join('');
+
+  palindrome === newStr
+    ? console.log(`${str} - It´s a palindrome`)
+    : console.log(`${str} - Not a palindrome`);
+  return '';
+};
+
+console.log(palindromeChecker('Hello World'));
+console.log(palindromeChecker('Mr. Owl ate my metal worm'));
+console.log(palindromeChecker('Do geese see God?'));
+
+// String repetition: Write a function that takes in a string and a number, n, and returns a new string consisting of n copies of the original string.
+
+console.log('---STRING REPETITION---');
+
+const stringRepetition = function (str, number) {
+  let newStr = `${str} `.repeat(number);
+
+  return newStr;
+};
+
+console.log(stringRepetition('Hello World', 3));
+
+//String characters frequency: Write a function that takes in a string and returns an object that contains the frequency of each character in the string.
+
+console.log('---STRING CHARACTERS FREQUENCY---');
+
+const frequency = function (string) {
+  console.log(string);
+  let newStr = string.replaceAll(' ', '').toLowerCase();
+  console.log(newStr);
+  const obj = {};
+  for (let i = 0; i < newStr.length; i++) {
+    //What is UNDEFINED?
+    if (obj[newStr[i]] === undefined) {
+      // console.log(newStr[i]);
+      obj[newStr[i]] = 1;
+    } else {
+      obj[newStr[i]] += 1;
+    }
+
+    //How to repeat just once in console?
+    console.log(obj);
+  }
+
+  return;
+};
+frequency('Hello');
+
+// let str = 'I am not gonna live forever, but I wanna live while I am alive',
+//   split = str.split(' '),
+//   obj = {};
+
+// console.log(split);
+
+// for (let i = 0; i < split.length; i++) {
+//   if (obj[split[i]] === undefined) {
+//     obj[split[i]] = 1;
+//   } else {
+//     obj[split[i]]++;
+//   }
+// }
+
+// console.log(obj);
